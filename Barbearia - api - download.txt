@@ -1,0 +1,11 @@
+Link para download:https://drive.google.com/drive/folders/1fDyO-GkvciETLlCTvlxGK8YLFo_H981r?usp=drive_link
+
+
+Como "rodar o projeto:
+
+1-)Após fazer o download do arquivo, descompacte-o;
+2-)Abra a pasta "Barbearia-api";
+3-)Com o visual studio instalado, dê um duplo clique no item "Barbearia-api.sln";
+4-)O projeto deve ser aberto. Assim, na parte superior do visual studio, escolha a opção http ou https;
+5-)Clique sobre essa opção para rodar o projeto. Pode aparecer um aviso, perguntando se deseja confiar no certificado ssl do asp.net core. Pode clicar em "não";
+6-)Deve aparecer uma interface do Swagger.
