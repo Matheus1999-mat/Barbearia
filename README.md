@@ -110,3 +110,25 @@ Esse projeto é parte de uma disciplina de desenvolvimento BackEnd e está sendo
 - **Matheus Freire**
 
 Com a orientação do **Professor Mateus Pereira**.
+
+## Diagrama entidade-relacionamento
+
+![WhatsApp Image 2024-11-26 at 14 52 49](https://github.com/user-attachments/assets/987ab240-4b9d-412f-9df5-2a54085ac55c)
+
+Cliente <-> Agendamento (1:N):
+
+Um cliente pode realizar vários agendamentos.
+O campo ClienteID na tabela Agendamento é uma chave estrangeira (FK) que referencia o ClienteID da tabela Cliente.
+
+
+Serviço <-> Agendamento (N:N):
+
+Um agendamento pode incluir vários serviços, e cada serviço pode estar associado a vários agendamentos.
+Este relacionamento provavelmente é implementado por uma tabela intermediária (não representada na imagem) que vincula AgendamentoID e ServicoID.
+
+
+Usuário (Independente):
+
+A tabela Usuário não possui relações diretas com as outras tabelas no modelo apresentado, indicando que serve apenas para autenticação e gestão do sistema.
+
+
