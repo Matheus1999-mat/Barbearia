@@ -37,12 +37,14 @@ O objetivo é criar uma API robusta usando **ASP.NET CORE**. Vamos implementar p
 ### Ferramentas e Tecnologias
 - **ASP.NET CORE**
 - **Entity Framework Core** para o banco de dados.
-- **JWT (JSON Web Tokens)** para autenticação.
-- **Postman** para testes.
-- **Identity Framework** para validação.
+- **Swagger** para testes.
+
 
 ### Melhores Práticas
 Estamos adotando boas práticas do mercado, usando teclas de atalho e outras técnicas para aumentar a produtividade, além de documentar tudo de forma que seja fácil de entender e seguir.
+
+## Ferramentas necessárias para executar o projeto
+Para utilizar esse projeto, é necessário utilizar uma IDE. É possível usar o **Visual Studio Code** ou o **Visual Studio**. Caso optar pelo **Visual Studio**, é possível utilizar a versão **Community 2022**. Além disso, o banco de dados utilizado foi o SQL Server. Assim, é necessário também baixar este software. 
 
 ## Instalação e Configuração
 1. Clone o repositório para a sua máquina local:
@@ -71,6 +73,21 @@ Estamos adotando boas práticas do mercado, usando teclas de atalho e outras té
    ```bash
    dotnet run
    ```
+
+## Como executar o projeto se for usado o Visual Studio
+1.Faça o download do projeto;
+
+2.Após isso, navegue entre as pastas do projeto, até encontrar um arquivo chamado **Sistema de barbearia.sln**. Dê um duplo clique;
+
+3.Após isso, o Visual Studio executará o projeto. Na parte superior, navegue até o item "Ferramentas". Clique em "Gerenciador de pacotes do NuGet". Depois, selecione "Console do gerenciador de pacotes";
+
+4.Na linha de comando, digite **cd "Sistema de barbearia"**. Após isso, escreva **cd Infrastructure**. Após isso, escreva **cd Migrations**;
+
+5.Digite o comando **Update-Database**, para executar as migrations. As migrations são comandos que servem para conexão ao banco de dados, para que seja possível fazer as operações necessárias;
+
+6.Execute o projeto;
+
+7.Uma interface do swagger deve aparecer.
 
 ## Estrutura de Código
 - **Controllers**: Contêm as rotas e endpoints da API.
