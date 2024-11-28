@@ -75,19 +75,19 @@ Para utilizar esse projeto, é necessário utilizar uma IDE. É possível usar o
    ```
 
 ## Como executar o projeto se for usado o Visual Studio
-1.Faça o download do projeto;
+1. Faça o download do projeto;
 
-2.Após isso, navegue entre as pastas do projeto, até encontrar um arquivo chamado **Sistema de barbearia.sln**. Dê um duplo clique;
+2. Após isso, navegue entre as pastas do projeto, até encontrar um arquivo chamado **Sistema de barbearia.sln**. Dê um duplo clique;
 
-3.Após isso, o Visual Studio executará o projeto. Na parte superior, navegue até o item "Ferramentas". Clique em "Gerenciador de pacotes do NuGet". Depois, selecione "Console do gerenciador de pacotes";
+3. Após isso, o Visual Studio executará o projeto. Na parte superior, navegue até o item "Ferramentas". Clique em "Gerenciador de pacotes do NuGet". Depois, selecione "Console do gerenciador de pacotes";
 
-4.Na linha de comando, digite **cd "Sistema de barbearia"**. Após isso, escreva **cd Infrastructure**. Após isso, escreva **cd Migrations**;
+4. Na linha de comando, digite **cd "Sistema de barbearia"**. Após isso, escreva **cd Infrastructure**. Após isso, escreva **cd Migrations**;
 
-5.Digite o comando **Update-Database**, para executar as migrations. As migrations são comandos que servem para conexão ao banco de dados, para que seja possível fazer as operações necessárias;
+5. Digite o comando **Update-Database**, para executar as migrations. As migrations são comandos que servem para conexão ao banco de dados, para que seja possível fazer as operações necessárias;
 
-6.Execute o projeto;
+6. Execute o projeto;
 
-7.Uma interface do swagger deve aparecer.
+7. Uma interface do swagger deve aparecer.
 
 ## Estrutura de Código
 - **Controllers**: Contêm as rotas e endpoints da API.
