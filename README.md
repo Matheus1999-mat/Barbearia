@@ -44,7 +44,12 @@ O objetivo é criar uma API robusta usando **ASP.NET CORE**. Vamos implementar p
 Estamos adotando boas práticas do mercado, usando teclas de atalho e outras técnicas para aumentar a produtividade, além de documentar tudo de forma que seja fácil de entender e seguir.
 
 ## Ferramentas necessárias para executar o projeto
-Para utilizar esse projeto, é necessário utilizar uma IDE. É possível usar o **Visual Studio Code** ou o **Visual Studio**. Caso optar pelo **Visual Studio**, é possível utilizar a versão **Community 2022**. Além disso, o banco de dados utilizado foi o SQL Server. Assim, é necessário também baixar este software. 
+Para utilizar esse projeto, algumas ferramentas são necessárias: 
+
+- **Visual Studio**: é a IDE que pode ser usada. Nesse caso, pode-se instalar a versão Community;
+- **Visual Studio Code**: esta é uma outra IDE que também pode ser usada;
+- **SQL Server**: é o banco de dados utilizado no projeto.
+ 
 
 ## Instalação e Configuração
 1. Clone o repositório para a sua máquina local:
