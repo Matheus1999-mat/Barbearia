@@ -1,2 +1,0 @@
-*Estrutura inicial do projeto, com as pastas a serem usadas.
-- É possível sofrer alterações.
