@@ -10,7 +10,7 @@ Para facilitar o desenvolvimento e a manutenção, organizamos o código em dife
 - **Controllers**
 - **Data**
 - **DTO**
-- **Migrations**: (Serviço, Agendamento, Cliente, Usuário)
+- **Migrations**
 - **Models**
 - **Obj**
 - **Bin**
@@ -23,6 +23,9 @@ Estamos seguindo o modelo Hexagonal, que separa bem as responsabilidades do sist
 - **Infrastructure**: Infraestrutura, como o banco de dados.
 - **Adapters**: Conexões entre as diferentes partes do sistema.
 
+## Link de download
+O link de download está localizado no arquivo Barbearia - api -download.txt
+
 ## O que Estamos Desenvolvendo
 O objetivo é criar uma API robusta usando **ASP.NET CORE**. Vamos implementar padrões de projeto como **Mediator**, **Repository** e **Notification**. O foco é atender às necessidades específicas da barbearia.
 
@@ -30,7 +33,6 @@ O objetivo é criar uma API robusta usando **ASP.NET CORE**. Vamos implementar p
 - **Agendamentos**: Permitir que os clientes agendem, atualizem ou cancelem horários.
 - **Gestão de Clientes**: Facilitar o cadastro, edição e remoção de clientes.
 - **Controle de Estoque**: Gerenciar produtos e materiais utilizados na barbearia.
-- **Segurança**: Usar **JWT** para garantir que só pessoas autorizadas possam acessar a API.
 - **Código Seguro**: Implementar técnicas que aumentam a segurança e robustez do sistema.
 - **Commands**: Usar requests baseados em Commands para manter o código claro e fácil de manter.
 
@@ -135,22 +137,29 @@ Com a orientação do **Professor Mateus Pereira**.
 
 ## Diagrama entidade-relacionamento
 
-![WhatsApp Image 2024-11-26 at 14 52 49](https://github.com/user-attachments/assets/987ab240-4b9d-412f-9df5-2a54085ac55c)
-
-Cliente <-> Agendamento (1:N):
-
-Um cliente pode realizar vários agendamentos.
-O campo ClienteID na tabela Agendamento é uma chave estrangeira (FK) que referencia o ClienteID da tabela Cliente.
+![WhatsApp Image 2024-12-02 at 19 30 46](https://github.com/user-attachments/assets/576be34a-eecb-4d4d-adfb-b1647548abca)
 
 
-Serviço <-> Agendamento (N:N):
+Relacionamento: 1 para N com Agendamento. O campo ID_Cliente de Agendamento será chave estrangeira que referencia ID_Cliente de Cliente.
+Agendamento
 
-Um agendamento pode incluir vários serviços, e cada serviço pode estar associado a vários agendamentos.
-Este relacionamento provavelmente é implementado por uma tabela intermediária (não representada na imagem) que vincula AgendamentoID e ServicoID.
+Relacionamento:
+1 para N com Cliente (via ID_Cliente).
+1 para N com Profissional (via ID_Profissional).
+Profissional
 
+Relacionamento: 1 para N com Agendamento. O campo ID_Profissional de Agendamento será chave estrangeira que referencia ID_Profissional de Profissional.
+Produto
 
-Usuário (Independente):
+Relacionamento: 1 para N com Estoque_Produto. O campo ID_Produto de Estoque_Produto será chave estrangeira que referencia ID_Produto de Produto.
+Estoque_Produto
 
-A tabela Usuário não possui relações diretas com as outras tabelas no modelo apresentado, indicando que serve apenas para autenticação e gestão do sistema.
+Relacionamento: 1 para N com Produto (via ID_Produto).
+Com essas orientações, você pode criar o diagrama no Draw.io da seguinte maneira:
+
+Relacionamentos:
+Cliente → Agendamento: 1 para N (Um cliente pode ter vários agendamentos). O campo ID_Cliente em Agendamento é chave estrangeira.
+Agendamento → Profissional: 1 para N (Um agendamento envolve um profissional, mas um profissional pode ter vários agendamentos). O campo ID_Profissional em Agendamento é chave estrangeira.
+Produto → Estoque_Produto: 1 para N (Um produto pode ter várias entradas e saídas no estoque). O campo ID_Produto em Estoque_Produto é chave estrangeira.
 
 
