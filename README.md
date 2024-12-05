@@ -8,12 +8,9 @@ Para facilitar o desenvolvimento e a manutenção, organizamos o código em dife
 
 - **Properties**
 - **Controllers**
-- **Data**
-- **DTO**
-- **Migrations**
-- **Models**
-- **Obj**
-- **Bin**
+- **Application**
+- **Domain**
+- **Infrastructure**
 
 ### Arquitetura e Padrões
 Estamos seguindo o modelo Hexagonal, que separa bem as responsabilidades do sistema. A organização do código é feita nas seguintes áreas:
@@ -21,7 +18,7 @@ Estamos seguindo o modelo Hexagonal, que separa bem as responsabilidades do sist
 - **Core/Domain**: Regras de negócio.
 - **Application**: Lógica da aplicação.
 - **Infrastructure**: Infraestrutura, como o banco de dados.
-- **Adapters**: Conexões entre as diferentes partes do sistema.
+
 
 ## Link de download
 O link de download está localizado no arquivo Barbearia - api -download.txt
@@ -30,9 +27,9 @@ O link de download está localizado no arquivo Barbearia - api -download.txt
 O objetivo é criar uma API robusta usando **ASP.NET CORE**. Vamos implementar padrões de projeto como **Mediator**, **Repository** e **Notification**. O foco é atender às necessidades específicas da barbearia.
 
 ### Funcionalidades
-- **Agendamentos**: Permitir que os clientes agendem, atualizem ou cancelem horários.
+- **Agendamentos**: Permitir que os clientes agendem, atualizem ou cancelem horários. Antes disso, é necessário cadastrar um cliente e um profissional.
 - **Gestão de Clientes**: Facilitar o cadastro, edição e remoção de clientes.
-- **Controle de Estoque**: Gerenciar produtos e materiais utilizados na barbearia.
+- **Controle de profissionais**: Realizar o cadastro, busca, atualização e remoção de profissionais.
 - **Código Seguro**: Implementar técnicas que aumentam a segurança e robustez do sistema.
 - **Commands**: Usar requests baseados em Commands para manter o código claro e fácil de manter.
 
@@ -48,61 +45,44 @@ Estamos adotando boas práticas do mercado, usando teclas de atalho e outras té
 ## Ferramentas necessárias para executar o projeto
 Para utilizar esse projeto, algumas ferramentas são necessárias: 
 
-- **Visual Studio**: é a IDE que pode ser usada. Nesse caso, pode-se instalar a versão Community;
-- **Visual Studio Code**: esta é uma outra IDE que também pode ser usada;
+- **Visual Studio**: é a IDE que pode ser usada. Nesse caso, pode-se instalar a versão Community. O link de download é esse: https://visualstudio.microsoft.com/pt-br/vs/community/
 - **SQL Server**: é o banco de dados utilizado no projeto.
  
 
-## Instalação e Configuração
-1. Clone o repositório para a sua máquina local:
-   ```bash
-   git clone https://github.com/usuario/barbearia-api.git
-   ```
-
-2. Acesse o diretório do projeto:
-   ```bash
-   cd barbearia-api
-   ```
-
-3. Restaure as dependências do projeto:
-   ```bash
-   dotnet restore
-   ```
-
-4. Configure as variáveis de ambiente no arquivo `appsettings.json` para a conexão com o banco de dados e outras configurações necessárias.
-
-5. Execute as migrações para configurar o banco de dados:
-   ```bash
-   dotnet ef database update
-   ```
-
-6. Inicie a aplicação:
-   ```bash
-   dotnet run
-   ```
-
-## Como executar o projeto se for usado o Visual Studio
+## Como executar o projeto:
 1. Faça o download do projeto;
 
 2. Após isso, navegue entre as pastas do projeto, até encontrar um arquivo chamado **Sistema de barbearia.sln**. Dê um duplo clique;
 
-3. Após isso, o Visual Studio executará o projeto. Na parte superior, navegue até o item "Ferramentas". Clique em "Gerenciador de pacotes do NuGet". Depois, selecione "Console do gerenciador de pacotes";
+3. Após isso, na parte lateral direita do Visual Studio, dentro da solução "Sistema de barbearia", procure o arquivo appsettings.json;
+![appsettings](https://github.com/user-attachments/assets/2a33715c-9114-4cfa-8bac-3d9f5c63d684)
 
-4. Na linha de comando, digite **cd "Sistema de barbearia"**. Após isso, escreva **cd Infrastructure**. Após isso, escreva **cd Migrations**;
 
-5. Digite o comando **Update-Database**, para executar as migrations. As migrations são comandos que servem para conexão ao banco de dados, para que seja possível fazer as operações necessárias;
+4. Após isso, abra esse arquivo appsettings.json. No item "ConnectionSettings", faça a configuração da string de conexão ao banco de dados, colocando as respectivas credenciais do seu SQL Server;
+![string](https://github.com/user-attachments/assets/4e6ac8b8-12cf-42ce-bd1f-3cc331f06cfe)
 
-6. Execute o projeto;
+5. Após isso, na parte superior do Visual Studio, porcure a aba Compilação, em seguida clique em Recompilar solução;
+![Captura de tela 2024-12-05 092827](https://github.com/user-attachments/assets/adef81c5-f0bc-40a0-92c2-edfac5090840)
 
-7. Uma interface do swagger deve aparecer.
+6. Após isso, na parte superior do Visual Studio, procure a aba Ferramentas. Em seguida, o item "Gerenciador de Pacotes do Nuget". Após isso, o item "Console do gerenciador de pacotes";
+![ferramentas](https://github.com/user-attachments/assets/892063c6-606b-45be-868f-d804253f16da)
+
+
+7. Após seguir o passo 6, na linha de comando, digite **cd "Sistema de barbearia"** e dê enter. Após isso, escreva **cd Infrastructure** e dê enter. Após isso, escreva **cd Migrations** e dê enter;
+
+8. Digite o comando **Update-Database** e dê enter, para executar as migrations. As migrations são comandos que servem para conexão ao banco de dados, para que seja possível fazer as operações necessárias;
+
+9. Execute o projeto;
+
+10. Uma interface do swagger deve aparecer.
 
 ## Estrutura de Código
 - **Controllers**: Contêm as rotas e endpoints da API.
 - **Data**: Inclui contextos e acesso ao banco de dados.
 - **DTO (Data Transfer Objects)**: Utilizados para transferir dados entre camadas.
 - **Migrations**: Histórico e controle das alterações no banco de dados.
-- **Models**: Representações das entidades do sistema.
-- **Services**: Lógica de negócios e operações sobre as entidades.
+- **Domain**: Representações das entidades do sistema.
+- **Application**: Lógica de negócios e operações sobre as entidades.
 
 ## Contribuição
 Para contribuir com o projeto, siga os passos abaixo:
@@ -137,29 +117,16 @@ Com a orientação do **Professor Mateus Pereira**.
 
 ## Diagrama entidade-relacionamento
 
-![WhatsApp Image 2024-12-02 at 19 30 46](https://github.com/user-attachments/assets/576be34a-eecb-4d4d-adfb-b1647548abca)
+![diagrama](https://github.com/user-attachments/assets/6493a5b5-cf7f-40e3-8722-8f299d853800)
 
 
-Relacionamento: 1 para N com Agendamento. O campo ID_Cliente de Agendamento será chave estrangeira que referencia ID_Cliente de Cliente.
-Agendamento
 
-Relacionamento:
-1 para N com Cliente (via ID_Cliente).
-1 para N com Profissional (via ID_Profissional).
-Profissional
+**Relacionamento**: 1 para N com Agendamento. O campo ClienteID de Agendamento será chave estrangeira, que referencia ClienteID de Cliente. 
+Isso significa que, antes de cadastrar um agendamento, é necessário cadastrar um cliente.
 
-Relacionamento: 1 para N com Agendamento. O campo ID_Profissional de Agendamento será chave estrangeira que referencia ID_Profissional de Profissional.
-Produto
+**Relacionamento**: 1 para N com Agendamento. O campo ProfissionalID de Profissional será chave estrangeira, que referencia ProfissionalID de Profissional. 
+Isso significa que, antes de cadastrar um agendamento, também é necessário cadastrar um profissional responsável pelo agendamento.
 
-Relacionamento: 1 para N com Estoque_Produto. O campo ID_Produto de Estoque_Produto será chave estrangeira que referencia ID_Produto de Produto.
-Estoque_Produto
-
-Relacionamento: 1 para N com Produto (via ID_Produto).
-Com essas orientações, você pode criar o diagrama no Draw.io da seguinte maneira:
-
-Relacionamentos:
-Cliente → Agendamento: 1 para N (Um cliente pode ter vários agendamentos). O campo ID_Cliente em Agendamento é chave estrangeira.
-Agendamento → Profissional: 1 para N (Um agendamento envolve um profissional, mas um profissional pode ter vários agendamentos). O campo ID_Profissional em Agendamento é chave estrangeira.
-Produto → Estoque_Produto: 1 para N (Um produto pode ter várias entradas e saídas no estoque). O campo ID_Produto em Estoque_Produto é chave estrangeira.
+**Relacionamentos**: após cadastrar um cliente e um profissional, pode-se cadastrar um agendamento. 
 
 
