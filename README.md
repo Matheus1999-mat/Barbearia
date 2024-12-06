@@ -23,6 +23,9 @@ Estamos seguindo o modelo Hexagonal, que separa bem as responsabilidades do sist
 ## Link de download
 O link de download está localizado no arquivo Barbearia - api -download.txt
 
+## Tutorial
+Há um vídeo ensinando a usar o projeto. Ele pode ser acessado nesse link: https://drive.google.com/drive/folders/1lYBTMfFLe4MOjFx1xkET0jXDRDW6flSz?usp=sharing
+
 ## O que Estamos Desenvolvendo
 O objetivo é criar uma API robusta usando **ASP.NET CORE**. Vamos implementar padrões de projeto como **Mediator**, **Repository** e **Notification**. O foco é atender às necessidades específicas da barbearia.
 
